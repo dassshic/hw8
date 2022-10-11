@@ -13,17 +13,12 @@ public class Main {
         System.out.println("Сумма трат за месяц составила " + sum + " рублей");
 
         System.out.println("task2");
-        int maxSum = 0;
-        int minSum = 200_001;
-        for (int value : array) {
-            if (value > maxSum) {
-                maxSum = value;
-            }
-        }
+        int maxSum = Integer.MIN_VALUE;
+        int minSum = Integer.MAX_VALUE;
         for (int k : array) {
-            if (k < minSum) {
-                minSum = k;
-            }
+            if (k < minSum) minSum = k;
+            if (k > maxSum)
+                maxSum = k;
         }
         System.out.println("Минимальная сумма трат за день составила " + minSum + " рублей. Максимальная сумма трат за день составила " + maxSum +" рублей");
 
@@ -36,12 +31,7 @@ public class Main {
 
         System.out.println("task4");
         char[] reverseFullName = { 'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        int length = 0;
-        for (int element : reverseFullName)
-        {
-            length++;
-        }
-        for (int i = length - 1; i >= 0; i--)
+        for (int i = reverseFullName.length - 1; i >= 0; i--)
         {
             System.out.print(reverseFullName[i]);
         }
